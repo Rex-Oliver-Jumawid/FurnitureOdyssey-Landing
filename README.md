@@ -10,7 +10,7 @@ furniture-odyssey-landing/
 ├── assets/
 │   ├── images/
 │   │   ├── brand-mark.png                  # New supplied Furniture Odyssey logo, header and site icons
-│   │   ├── demo-poster.webp               # Real frame from the demo
+│   │   └── demo-poster.webp               # Real frame from the demo
 │   └── videos/
 │       └── furniture-odyssey-demo.mp4     # Optimized H.264/AAC, 1280 × 720
 ├── README.md
