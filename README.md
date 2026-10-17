@@ -9,10 +9,8 @@ furniture-odyssey-landing/
 ├── index.html                              # Full landing page, including 2-second module preview
 ├── assets/
 │   ├── images/
-│   │   ├── apple-touch-icon.png
-│   │   ├── brand-icons.webp
+│   │   ├── brand-mark.png                  # New supplied Furniture Odyssey logo, header and site icons
 │   │   ├── demo-poster.webp               # Real frame from the demo
-│   │   └── favicon.ico
 │   └── videos/
 │       └── furniture-odyssey-demo.mp4     # Optimized H.264/AAC, 1280 × 720
 ├── README.md
@@ -70,3 +68,5 @@ When prompted, choose **Other** (no framework), project root, and no build step.
 - Confirm pricing and package amounts: the post-launch package total is ₱24,999; the launch offer is ₱11,999.
 - Check links to the live demo, the Cal.com consultation booking popup and its link fallback, and other calls to action. Test a real booking on the production site, including timezone, confirmation, and calendar delivery.
 - Test the production deployment's root URL and the `/assets/videos/furniture-odyssey-demo.mp4` URL after pushing.
+
+The landing page navbar, favicon, and Apple touch icon all use the current supplied `assets/images/brand-mark.png`. Legacy brand icon assets were removed.
