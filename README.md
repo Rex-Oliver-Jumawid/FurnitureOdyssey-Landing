@@ -39,6 +39,8 @@ Open `http://localhost:8000/` in your browser. Stop the server with Ctrl+C. HTML
 4. Deploy. Vercel serves `index.html` from `/`, and the media from `/assets/...`.
 5. Add your custom marketing domain in Vercel's project **Settings > Domains**, if desired.
 
+The footer consultation CTA uses the official Cal.com popup embed for `https://cal.com/rex-oliver-jumawid-mmz8ct/furniture-odyssey-consultation`. If the embed script cannot load, the same CTA remains a normal link to the public booking page in a new tab. Configure consultation questions, availability, video provider, and calendar connections in Cal.com, not in this HTML. No Cal.com API key is needed.
+
 The POS link is independent: `https://furniture-odyssey-pos.vercel.app/demo`. It opens in a new tab. Updating the marketing site won't redeploy or alter the product's database, authentication, or business operations.
 
 ### CLI alternative
@@ -66,5 +68,5 @@ When prompted, choose **Other** (no framework), project root, and no build step.
 - Review at a desktop and mobile width, and ensure no horizontal overflow.
 - Verify the rotating hero preview advances every two seconds and manual navigation works.
 - Confirm pricing and package amounts: the post-launch package total is ₱24,999; the launch offer is ₱11,999.
-- Check links to the live demo, meeting booking dialog, and other calls to action.
+- Check links to the live demo, the Cal.com consultation booking popup and its link fallback, and other calls to action. Test a real booking on the production site, including timezone, confirmation, and calendar delivery.
 - Test the production deployment's root URL and the `/assets/videos/furniture-odyssey-demo.mp4` URL after pushing.
