@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#642b2d" name="theme-color"/>
+<meta content="Furniture Odyssey by Prometheus. A furniture sales operations system for quotations, orders, payments, and deliveries." name="description"/>
+<title>Furniture Odyssey by Prometheus | Refined Landing Page Wireframe</title>
+<style>
+    :root { --ink: #25201f; --muted:#776d67; --ivory:#fff4ea; --paper:#fbf9f6; --beige:#f5f0eb; --red:#bd3434; --burgundy:#642b2d; --line:#e5ddd7; --radius:18px; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:75px; }
+    body { margin:0; background:#fff; color:var(--ink); font-family:Arial,Helvetica,sans-serif; line-height:1.52; }
+    a { color:inherit; }
+    a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid #d74949; outline-offset:4px; }
+    .container { width:min(1160px,calc(100% - 64px)); margin-inline:auto; }
+    .eyebrow { display:inline-block; color:var(--red); font-size:11px; letter-spacing:.19em; font-weight:800; line-height:1.5; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,.display { font-family:Georgia,'Times New Roman',serif; letter-spacing:-.045em; font-weight:400; }
+    h1 { font-size:clamp(43px,5.4vw,80px); line-height:1.06; margin:18px 0 24px; max-width:670px; }
+    h2 { font-size:clamp(33px,3.7vw,54px); line-height:1.12; margin:14px 0 17px; }
+    h3 { font-size:21px; line-height:1.25; margin:0 0 10px; }
+    p { color:var(--muted); }
+    .btn { border-radius:40px; border:1px solid transparent; padding:15px 24px; min-height:49px; display:inline-flex; justify-content:center; align-items:center; gap:12px; text-decoration:none; font-size:13px; font-weight:750; white-space:nowrap; transition:background .2s,transform .2s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--red); color:#fff; }
+    .btn-primary:hover { background:#9b252b; }
+    .btn-dark { background:var(--ink); color:#fff; }
+    .btn-dark:hover { background:#463735; }
+    .nav { background:#fff; border-bottom:1px solid var(--line); position:relative; z-index:4; }
+    .nav-in { height:80px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-size:18px; text-decoration:none; font-weight:800; letter-spacing:-.04em; display:flex; align-items:center; gap:10px; }
+    .brand-emblem { display:inline-grid; place-items:center; color:#fff; background:var(--red); border-radius:7px; width:34px; height:34px; font-size:19px; transform:rotate(-7deg); }
+    .nav-menu { display:flex; align-items:center; gap:29px; font-size:13px; font-weight:650; }
+    .nav-menu>a:not(.btn) { text-decoration:none; color:#584f4b; }
+    .nav-menu>a:hover { color:var(--red); }
+    .hero { padding:98px 0 80px; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:70px; }
+    .hero .description { font-size:17px; line-height:1.8; max-width:510px; }
+    .hero em { color:var(--red); font-style:italic; }
+    .hero-actions { margin-top:31px; display:flex; flex-wrap:wrap; align-items:center; gap:17px; }
+    .helper { font-size:12px; color:var(--muted); }
+    .screen-wrap { background:#f2eae4; border-radius:26px; padding:28px 0 28px 26px; position:relative; box-shadow:inset 0 0 0 1px #eae0d8; }
+    .screen-wrap::after { content:'SOFTWARE INTERFACE PREVIEW'; position:absolute; right:14px; bottom:8px; font-size:9px; font-weight:750; letter-spacing:.1em; color:#9d8c85; }
+    .screen { border:1px solid #dbd5d0; border-right:0; border-radius:13px 0 0 13px; min-height:395px; background:#fff; overflow:hidden; box-shadow:0 16px 40px #42211b1c; }
+    .screen-top { height:42px; border-bottom:1px solid #ebe8e6; display:flex; align-items:center; justify-content:space-between; padding:0 14px; }
+    .dots { display:flex; gap:5px; }.dots i { display:block; height:7px; width:7px; border-radius:50%; background:#e0d7d1; }.dots i:first-child { background:var(--red); }
+    .screen-txt { font-size:10px; color:#766e6a; font-weight:700; }
+    .dash { display:grid; grid-template-columns:110px 1fr; min-height:353px; }
+    .dash-side { border-right:1px solid #f1edeb; padding:21px 13px; }
+    .dash-side strong { color:var(--ink); font-size:9px; letter-spacing:.03em; }.dash-side span { display:block; margin-top:20px; font-size:9px; color:#a49a95; }
+    .dash-side span.active { color:var(--red); font-weight:800; }
+    .dash-main { padding:19px 17px; overflow:hidden; }.dash-main>strong { font-size:14px; }
+    .dash-main>p { font-size:10px; margin:0 0 18px; }
+    .dash-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }.metric { border:1px solid #f0ebe7; border-radius:7px; padding:11px 9px; }
+    .metric span { display:block; color:#9b918c; font-size:8px; white-space:nowrap; }.metric b { font-size:15px; }
+    .dash-chart { margin:13px 0 10px; border:1px solid #f0ebe7; border-radius:8px; padding:9px; }.dash-chart svg { display:block; width:100%; height:102px; }
+    .recent { font-size:10px; font-weight:700; }.recent-row { display:flex; justify-content:space-between; gap:10px; padding:9px 0; border-bottom:1px solid #f5f1ee; font-size:8px; color:#817773; }.recent-row b { color:#4b3e3b; }
+    .proof-strip { background:#f7f3ef; border-top:1px solid #efe9e4; border-bottom:1px solid #efe9e4; }
+    .proof-inner { display:flex; justify-content:space-between; align-items:center; gap:22px; flex-wrap:wrap; padding:21px 0; font-size:11px; font-weight:800; letter-spacing:.10em; color:#655954; }
+    .proof-inner span::before { content:'✓'; color:var(--red); font-weight:900; margin-right:10px; }
+    section.block { padding:110px 0; }.section-header { max-width:720px; margin-bottom:38px; }
+    .pain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .pain { min-height:188px; padding:26px; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    .pain .symbol { display:inline-grid; place-items:center; color:var(--red); font-size:22px; width:39px; height:39px; background:#f8f2ef; border-radius:11px; margin-bottom:21px; }
+    .pain h3 { font-size:17px; }.pain p { font-size:13px; margin-bottom:0; line-height:1.65; }
+    .problem { padding:99px 0; background:#282120; color:#fff8f1; }
+    .problem h2 { max-width:920px; }.problem p { color:#d7cdc7; max-width:650px; font-size:16px; }
+    .before-after { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:44px; }
+    .comparison { background:#38302e; border:1px solid #594643; padding:29px; border-radius:14px; }.comparison .label { color:#ffc9c1; letter-spacing:.12em; font-size:11px; font-weight:800; }.comparison h3 { color:#fff8f1; margin-top:18px; }.comparison p { color:#c9c0bc; margin-bottom:0; }
+    .solution { background:#fff; }.steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:40px 0; }
+    .step { background:var(--beige); border-radius:13px; padding:25px; position:relative; }.step-number { color:var(--red); font-size:11px; font-weight:800; letter-spacing:.12em; }.step h3 { margin:28px 0 8px; font-size:19px; }.step p { font-size:13px; margin:0; }
+    .demo-panel { min-height:290px; background:#f7f4f1; border:1px solid var(--line); border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; text-align:center; }
+    .play-icon { display:grid; place-items:center; width:74px; height:74px; border-radius:50%; background:#fff; color:var(--red); font-size:28px; box-shadow:0 8px 23px #29151516; }
+    .demo-panel h3 { margin:0; }.demo-panel p { font-size:13px; margin:0; }.demo-panel a { color:var(--red); font-size:13px; font-weight:800; text-underline-offset:4px; }
+    .difference { background:var(--paper); }.benefits { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .benefit { border-top:2px solid var(--red); padding:24px 4px; }.benefit h3 { font-family:Georgia,serif; font-weight:400; font-size:31px; letter-spacing:-.04em; }.benefit b { color:var(--red); letter-spacing:.08em; font-size:11px; }
+    .feature-section { background:#f7f3ef; }.features { display:grid; gap:12px; }.feature { display:grid; grid-template-columns:1.2fr 1.3fr auto; align-items:center; gap:20px; padding:25px 28px; border:1px solid #ede4df; border-radius:12px; background:#fff; }.feature h3 { font-size:18px; margin:0; }.feature p { margin:0; font-size:13px; }.feature b { white-space:nowrap; font-size:19px; font-weight:700; }.features-total { display:flex; justify-content:space-between; gap:20px; padding:26px 5px 0; font-weight:750; }.features-total strong { font-family:Georgia,serif; font-size:30px; font-weight:400; }
+    .story-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:85px; align-items:start; }.story-grid p { font-size:16px; line-height:1.8; }
+    .included { display:grid; grid-template-columns:1fr 1fr; gap:14px; }.inc-card { border:1px solid var(--line); border-radius:13px; padding:25px; }.inc-card .check { display:inline-grid; place-items:center; border-radius:50%; width:28px; height:28px; background:#e9f3ec; color:#28704a; font-size:16px; margin-bottom:18px; }.inc-card h3 { font-size:16px; }.inc-card p { font-size:12px; margin-bottom:0; }
+    .pricing { background:#f8f4f0; }.pricing-head { text-align:center; max-width:700px; margin:0 auto 36px; }.pricing-layout { display:grid; grid-template-columns:.92fr 1.08fr; gap:30px; align-items:stretch; max-width:980px; margin:auto; }.price-story { padding:41px; }.price-story h3 { font:normal 37px/1.18 Georgia,serif; letter-spacing:-.04em; }.price-story p { font-size:15px; line-height:1.8; }.prices-note { display:grid; grid-template-columns:auto auto; align-items:center; gap:12px; max-width:330px; border-bottom:1px solid var(--line); padding:17px 0; font-size:13px; }.prices-note span:last-child { font-weight:750; text-align:right; white-space:nowrap; }.price-card { background:#fff; border:1px solid #ddc4bc; border-radius:23px; padding:42px; box-shadow:0 25px 70px #3c21120c; }.price-card .tag { display:inline-block; padding:8px 12px; border-radius:30px; background:#fbefed; color:#a32c30; font-size:10px; font-weight:800; letter-spacing:.12em; }.price-number { font:normal clamp(54px,5.3vw,84px)/1 Georgia,serif; letter-spacing:-.05em; color:var(--red); margin:26px 0 10px; }.price-card p { font-size:14px; }.price-card ul { padding:20px 0 20px; margin:0; list-style:none; border-top:1px solid var(--line); }.price-card li { padding:6px 0; font-size:14px; }.price-card li::before { content:'✓'; color:#248658; margin-right:10px; font-weight:900; }.price-card .btn { width:100%; }.price-card small { display:block; text-align:center; color:var(--muted); margin-top:16px; }
+    .faq-section { background:#fff; }.faq-section h2 { font-family:Arial,Helvetica,sans-serif; font-size:clamp(32px,3vw,42px); font-weight:750; letter-spacing:-.04em; margin-bottom:32px; }.faqs { display:grid; gap:16px; }
+    .faq { border:1px solid #ddd; border-radius:8px; overflow:hidden; background:#fff; }.faq summary { padding:26px 28px; list-style:none; cursor:pointer; font-size:19px; display:flex; justify-content:space-between; align-items:center; gap:20px; }.faq summary::-webkit-details-marker { display:none; }.faq summary::after { content:'+'; font:300 30px/1 Arial,Helvetica,sans-serif; color:#5c5b59; }.faq[open] summary::after { content:'−'; }.faq .faq-answer { color:#766d67; padding:0 75px 26px 28px; font-size:15px; max-width:930px; line-height:1.75; }
+    .faq .faq-answer p { margin:0; }
+    .prefooter { background:#fff; padding:0 0 90px; }.prefooter .inner { background:#bd3434; color:#fff; border-radius:19px; padding:52px 60px; display:flex; align-items:center; justify-content:space-between; gap:30px; }.prefooter h2 { font:normal 43px/1.12 Georgia,serif; max-width:690px; color:#fff; margin:0; }.prefooter p { color:#ffe3df; margin:12px 0 0; font-size:14px; }.prefooter .btn { background:#fff; color:#a52c31; }
+    /* The Prometheus editorial footer is constructed entirely with HTML/CSS. */
+    .prometheus-footer { background:#fff; padding:0; }
+    .footer-artboard { position:relative; isolation:isolate; container-type:inline-size; width:100%; aspect-ratio:1774 / 806; overflow:hidden; background:#642b2d; color:#fff4ea; font-family:'Trebuchet MS',Arial,sans-serif; }
+    .footer-foreground { position:relative; z-index:1; padding:3.6cqw 9.5cqw 0; height:100%; }
+    .footer-top { display:flex; justify-content:space-between; align-items:center; padding-bottom:1.7cqw; border-bottom:1px solid #fff4ea45; gap:20px; }
+    .footer-top .brand-label,.footer-top .contact-label { color:#fff4ea; font:700 1.0cqw/1.1 'Trebuchet MS',Arial,sans-serif; text-transform:uppercase; letter-spacing:.17em; }
+    .footer-top .contact-label { text-decoration:none; }.footer-top .contact-label:hover { text-decoration:underline; }
+    .footer-main { display:block; margin-top:1.9cqw; }
+    .footer-heading { font:normal 5cqw/.94 Georgia,'Times New Roman',serif; letter-spacing:-.058em; max-width:68cqw; margin:0; }
+    .footer-intro { max-width:53cqw; margin-top:2.2cqw; color:#fff4ead8; font:400 1.30cqw/1.58 'Trebuchet MS',Arial,sans-serif; }
+    .footer-lower { position:absolute; z-index:1; top:23.5cqw; left:9.5cqw; right:9.5cqw; display:flex; justify-content:space-between; align-items:end; gap:4cqw; }
+    .footer-cta { font:700 1.12cqw/1.1 'Trebuchet MS',Arial,sans-serif; display:inline-flex; align-items:center; justify-content:center; text-decoration:none; padding:1.45cqw 2cqw; border:1px solid #fff4eab0; border-radius:100px; transition:background .2s,color .2s; white-space:nowrap; }
+    .footer-cta:hover { background:var(--ivory); color:var(--burgundy); }
+    .footer-links { display:grid; grid-template-columns:repeat(2,1fr); gap:2.0cqw 3.7cqw; font:500 1.1cqw/1.2 'Trebuchet MS',Arial,sans-serif; }
+    .footer-links a { text-decoration:none; }.footer-links a:hover { text-decoration:underline; }
+    .footer-wordmark { position:absolute; z-index:0; left:50%; bottom:-.25em; transform:translateX(-50%) scaleX(1.075); transform-origin:center bottom; white-space:nowrap; color:#fff4ea; font:normal 14.7cqw/.9 Georgia,'Times New Roman',serif; letter-spacing:-.075em; pointer-events:none; user-select:none; }
+    @media(max-width:900px) { .hero-grid { grid-template-columns:1fr; gap:40px; } .hero { padding:75px 0 55px; }.hero h1 { max-width:760px; }.screen-wrap { max-width:650px; }.pain-grid { grid-template-columns:repeat(2,1fr); }.story-grid { grid-template-columns:1fr; gap:35px; }.feature { grid-template-columns:1fr auto; }.feature p { grid-column:1/-1; grid-row:2; }.pricing-layout { grid-template-columns:1fr; }.price-story { padding:0; }.footer-artboard { aspect-ratio:1.7; }.footer-lower { top:57cqw; }.footer-heading { font-size:5.9cqw; }.footer-intro { font-size:1.9cqw; }.footer-top .brand-label,.footer-top .contact-label { font-size:1.4cqw; }.footer-links,.footer-cta { font-size:1.4cqw; }.footer-wordmark { font-size:14.7cqw; } }
+    @media(max-width:600px) { .container { width:calc(100% - 36px); }.nav-in { height:69px; }.brand { font-size:15px; }.nav-menu { gap:10px; }.nav-menu>a:not(.btn) { display:none; }.nav-menu .btn { font-size:11px; min-height:38px; padding:11px 14px; }.hero { padding:59px 0; }.hero h1 { font-size:47px; }.hero .description { font-size:15px; }.hero-actions .btn { width:100%; }.screen-wrap { padding:14px 0 23px 14px; }.dash { grid-template-columns:72px 1fr; }.dash-side { padding:16px 8px; }.dash-side strong,.dash-side span { font-size:7px; }.dash-main { padding:16px 9px; }.dash-metrics { gap:3px; }.metric { padding:8px 4px; }.metric b { font-size:12px; }.metric span { font-size:6px; }.proof-inner { gap:12px; font-size:9px; justify-content:center; }.block { padding:70px 0 !important; }.pain-grid,.benefits,.before-after,.included { grid-template-columns:1fr; }.pain { min-height:auto; padding:23px; }.problem { padding:70px 0; }.steps { grid-template-columns:repeat(2,minmax(0,1fr)); }.step { padding:18px; }.feature { padding:20px; grid-template-columns:1fr auto; }.feature h3 { font-size:14px; }.feature b { font-size:15px; }.feature p { font-size:12px; }.features-total { font-size:13px; }.features-total strong { font-size:23px; }.price-story h3 { font-size:33px; }.price-card { padding:25px; }.faq-section h2 { font-size:30px; }.faq summary { font-size:16px; padding:20px; }.faq .faq-answer { padding:0 25px 21px 20px; font-size:14px; }.prefooter { padding-bottom:38px; }.prefooter .inner { padding:30px; border-radius:14px; display:block; }.prefooter h2 { font-size:33px; }.prefooter .btn { margin-top:22px; }.footer-artboard { aspect-ratio: 4/5; min-height:530px; }.footer-foreground { padding:8cqw 6.5cqw 0; }.footer-top { padding-bottom:5cqw; }.footer-top .brand-label,.footer-top .contact-label { font-size:2.5cqw; }.footer-main { display:block; margin-top:9cqw; }.footer-heading { font-size:9.4cqw; max-width:88cqw; line-height:1.04; letter-spacing:-.06em; }.footer-intro { font-size:3.5cqw; max-width:85cqw; margin-top:5cqw; line-height:1.6; }.footer-lower { top:auto; bottom:18cqw; left:6.5cqw; right:6.5cqw; display:flex; align-items:start; flex-direction:column; gap:8cqw; }.footer-cta { padding:3cqw 4cqw; font-size:3cqw; }.footer-links { gap:4cqw 9cqw; font-size:3cqw; }.footer-wordmark { font-size:15.6cqw; bottom:-.34em; transform:translateX(-50%) scaleX(1.08); } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.btn,.footer-cta { transition:none; } }
+
+    /* Floating editorial pill navigation, inspired by Prometheus DX. */
+    html { scroll-padding-top:112px; }
+    section[id], footer[id] { scroll-margin-top:114px; }
+    .nav {
+      position:sticky; top:14px; margin:14px auto 0;
+      width:min(1230px,calc(100% - 42px)); z-index:80;
+      background:rgba(255,251,247,.92); border:1px solid rgba(100,43,45,.13);
+      border-radius:999px; -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
+      box-shadow:0 9px 34px rgba(54,29,30,.10);
+    }
+    .nav-in { width:100%; height:76px; padding:7px 10px 7px 20px; }
+    .brand { gap:12px; font-size:17px; flex-shrink:0; min-width:0; }
+    .nav-brand-icon { width:59px; height:56px; object-fit:contain; flex-shrink:0; filter:drop-shadow(0 3px 4px #2d15151c); }
+    .brand-name { display:flex; flex-direction:column; line-height:1.16; white-space:nowrap; }
+    .brand-name small { font:600 9px/1.3 'Trebuchet MS',sans-serif; color:#9a817b; letter-spacing:.1em; margin-top:5px; text-transform:uppercase; }
+    .nav-menu { gap:4px; }
+    .nav-menu>a:not(.btn) { padding:11px 12px; border-radius:999px; color:#5d514d; transition:background .18s,color .18s; }
+    .nav-menu>a:not(.btn):hover,.nav-menu>a:not(.btn).is-current { background:#f3e8e3; color:#9f2c30; }
+    .nav-menu .btn { min-height:44px; margin-left:7px; font-size:12px; padding:13px 20px; }
+    .mobile-nav-toggle { display:none; align-items:center; justify-content:center; border:1px solid #e6d6cf; background:#fff; border-radius:50%; width:43px; height:43px; cursor:pointer; }
+    .hamburger { display:flex; flex-direction:column; gap:4px; }.hamburger i { width:18px; height:2px; background:#4d3432; border-radius:2px; transition:transform .2s,opacity .2s; }
+    .mobile-nav-toggle[aria-expanded="true"] .hamburger i:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    .mobile-nav-toggle[aria-expanded="true"] .hamburger i:nth-child(2) { opacity:0; }
+    .mobile-nav-toggle[aria-expanded="true"] .hamburger i:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+
+    /* Price comparison is editorial: visible slashes rather than a fabricated previous sale. */
+    .pricing-layout { max-width:1070px; grid-template-columns:.93fr 1.07fr; gap:30px; }
+    .price-story { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:25px 22px 25px 0; }
+    .price-story h3 { font-size:clamp(33px,3.3vw,47px); margin-bottom:16px; }
+    .price-story>p { max-width:460px; }
+    .launch-warning { font-family:Georgia,serif; font-size:clamp(24px,2.3vw,31px) !important; line-height:1.28 !important; color:var(--ink); margin:15px 0 25px; }
+    .launch-warning em { font-style:normal; color:#b72f34; }
+    .qualification-note { border:1px solid #e8d4cc; border-radius:15px; background:#fffdfb; display:flex; gap:14px; padding:20px; }
+    .qualifying-icon { color:#b62e34; font-size:28px; line-height:1; }
+    .qualification-note strong { font-size:14px; }
+    .qualification-note p { font-size:13px; margin:6px 0 0; line-height:1.6; }
+    .mini-value { width:100%; margin-top:20px; border-top:1px solid var(--line); padding:19px 0 0; display:flex; align-items:center; justify-content:space-between; gap:14px; font-size:12px; color:#665852; }
+    .mini-value strong { font:normal 28px/1 Georgia,serif; color:#a92b30; white-space:nowrap; }
+    .price-card { padding:39px; border-color:#dfbdb4; box-shadow:0 28px 70px rgba(54,25,20,.08); }
+    .price-journey { margin:23px 0 20px; border:1px solid #f1e1dc; border-radius:17px; padding:25px; background:linear-gradient(160deg,#fffaf7,#fff); }
+    .journey-row { display:flex; justify-content:space-between; align-items:center; gap:17px; }
+    .journey-label { font-size:10px; letter-spacing:.1em; line-height:1.5; font-weight:800; color:#95827a; max-width:180px; }
+    .journey-crossed { position:relative; font:normal clamp(26px,2.8vw,36px)/1 Georgia,serif; color:#827773; white-space:nowrap; isolation:isolate; }
+    .journey-crossed::after { content:""; position:absolute; top:52%; left:-6%; width:113%; height:3px; background:#bd3434; border-radius:5px; transform:rotate(-9deg); transform-origin:center; box-shadow:0 0 0 1px #fff4e940; }
+    .journey-arrow { text-align:center; color:#b53b3b; font-size:19px; height:34px; line-height:33px; }
+    .journey-final { padding-top:11px; border-top:1px solid #eadcd6; display:flex; flex-direction:column; align-items:flex-start; }
+    .journey-current-label { color:#ad3035; letter-spacing:.14em; font-weight:800; font-size:10px; }
+    .journey-final .price-number { font-size:clamp(62px,6.1vw,88px); margin:9px 0 2px; }
+    .journey-sub { color:#756a65; font-size:13px; }
+    .price-card ul { margin-top:8px; }
+    .price-card .pricing-disclaimer { font-size:10px; color:#998a83; margin:18px 0 0; line-height:1.6; text-align:center; }
+    @media(max-width:1110px) {
+      .nav-in { height:70px; padding:7px 9px 7px 16px; }
+      .nav-brand-icon { width:52px; height:51px; }
+      .brand { font-size:15px; gap:7px; }
+      .nav-menu>a:not(.btn) { padding:10px 8px; font-size:12px; }
+      .nav-menu .btn { padding:11px 13px; }
+    }
+    @media(max-width:870px) {
+      .nav { top:12px; width:calc(100% - 28px); }
+      .nav-in { height:66px; padding-right:12px; }
+      .mobile-nav-toggle { display:inline-flex; margin-left:auto; flex-shrink:0; }
+      .nav-menu { display:none; position:absolute; top:calc(100% + 10px); right:0; width:min(360px,100%); flex-direction:column; gap:4px; align-items:stretch; padding:12px; background:#fffdfb; border:1px solid #e8dcd6; border-radius:23px; box-shadow:0 22px 60px #43202027; }
+      .nav-menu.is-open { display:flex; }
+      .nav-menu>a:not(.btn) { display:block; font-size:14px; padding:13px 16px; }
+      .nav-menu .btn { margin:8px 0 0; }
+      .pricing-layout { grid-template-columns:1fr; max-width:720px; }
+      .price-story { padding:0 0 10px; }
+    }
+    @media(max-width:600px) {
+      html { scroll-padding-top:94px; }
+      section[id],footer[id] { scroll-margin-top:95px; }
+      .nav { margin-top:10px; top:10px; width:calc(100% - 24px); }
+      .nav-in { height:59px; padding:6px 10px; }
+      .brand { font-size:13px; gap:5px; }
+      .brand-name small { font-size:8px; }
+      .nav-brand-icon { width:46px; height:44px; }
+      .mobile-nav-toggle { width:39px; height:39px; }
+      .price-story h3 { font-size:35px; }
+      .price-card { padding:22px; }
+      .price-journey { padding:18px; }
+      .journey-label { font-size:9px; max-width:150px; }
+      .journey-crossed { font-size:29px; }
+      .journey-final .price-number { font-size:clamp(56px,13vw,76px); }
+      .mini-value { align-items:start; }
+      .qualification-note { padding:17px; }
+    }
+    @media(prefers-reduced-motion:reduce) { .nav-menu>a,.hamburger i { transition:none; } }
+  </style>
+<style id="odyssey-final-refinements">
+/* Full-width on load; transform into Prometheus-DX styled frosted pill after scroll. */
+html {scroll-padding-top:110px;}
+section[id],footer[id]{scroll-margin-top:110px;}
+.nav {position:sticky; top:0!important; margin:0!important; width:100%!important;
+  height:80px; z-index:90; border-radius:0; background:#fff; border:0; border-bottom:1px solid var(--line);
+  backdrop-filter:none; -webkit-backdrop-filter:none; box-shadow:none;
+  transition:background .30s ease,border-color .30s ease;}
+.nav .nav-in {width:min(1180px,calc(100% - 64px)); max-width:none; height:80px; margin:0 auto;
+  padding:0; border:1px solid transparent; border-radius:0; background:transparent;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:width .32s ease,height .32s ease,padding .32s ease,transform .32s ease,border-radius .32s ease,background .32s ease,box-shadow .32s ease;}
+.nav.is-scrolled {background:transparent; border-color:transparent;}
+.nav.is-scrolled .nav-in {width:min(990px,calc(100% - 96px)); height:68px; padding:0 20px; transform:translateY(8px);
+  border:1px solid rgba(255,255,255,.78); border-radius:999px;
+  background:rgba(255,255,255,.64); -webkit-backdrop-filter:blur(26px) saturate(180%);
+  backdrop-filter:blur(26px) saturate(180%);
+  box-shadow:0 15px 38px rgba(35,30,27,.10),0 3px 9px rgba(35,30,27,.045),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.30);}
+.nav .brand {font-size:17px; gap:12px;}
+.nav .nav-brand-icon {width:59px;height:56px;object-fit:contain;}
+.nav .nav-menu {margin-left:auto;}
+.nav .nav-menu>a:not(.btn){font-weight:650;}
+/* Original two-column pricing layout, with selective diagonal price slashes. */
+.pricing-layout{max-width:1050px;grid-template-columns:.92fr 1.08fr;gap:30px;align-items:stretch;}
+.price-story {display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:30px 36px 30px 0;}
+.price-story h3 {font:normal clamp(31px,3.3vw,42px)/1.17 Georgia,serif;letter-spacing:-.045em;margin:0 0 16px;}
+.price-story>p{max-width:465px;}
+.launch-warning{font:normal clamp(21px,2.15vw,27px)/1.26 Georgia,serif!important;margin:20px 0 22px;color:var(--ink);}
+.launch-warning em {font-style:normal;color:#bc3235;}
+.qualification-note {padding:14px 16px;margin:0 0 16px;width:100%;}
+.qualification-note strong {font-size:13px;}
+.qualification-note p {font-size:12px;margin-top:4px;}
+.qualifying-icon{font-size:20px;}
+.prices-note {width:100%;max-width:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:17px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.prices-note .prior-amount {display:inline-block;position:relative;font-weight:750;color:#716b68;isolation:isolate;white-space:nowrap;}
+.prices-note .prior-amount:after {content:'';position:absolute;left:-5%;top:52%;width:110%;height:2.5px;border-radius:3px;background:#bb3435;transform:rotate(-10deg);pointer-events:none;}
+.prices-note-emphasis span:last-child {font-weight:800;color:#bc3235;}
+.price-card {padding:42px;border-color:#ddc4bc;box-shadow:0 25px 70px #3c21120c;}
+.price-card>.price-number {font-size:clamp(64px,5.6vw,84px);margin:26px 0 10px;}
+.price-card ul{margin-top:18px;}
+.price-card .pricing-disclaimer {font-size:10px;margin:20px 0 0;line-height:1.65;color:#94877f;text-align:center;}
+/* Booking CTA preview popup: operational without pretending to reserve an appointment. */
+.meeting-dialog{border:1px solid #e4d5d0;border-radius:20px;max-width:min(560px,calc(100vw - 32px));width:100%;padding:0;color:#241f1d;box-shadow:0 25px 90px #24101a65;}
+.meeting-dialog::backdrop{background:rgba(30,19,19,.57);backdrop-filter:blur(4px);}
+.meeting-modal-content{padding:32px;display:flex;flex-direction:column;gap:12px;position:relative;}
+.meeting-modal-content h2{font:normal clamp(29px,3.2vw,42px)/1.06 Georgia,serif;letter-spacing:-.045em;margin:4px 0;}
+.meeting-modal-content p {color:#71675f;line-height:1.65;font-size:14px;margin:4px 0 10px;}
+.meeting-modal-content label {font:700 12px Arial,sans-serif;color:#3a302e;}
+.meeting-modal-content input {padding:13px 15px;border-radius:9px;border:1px solid #ded2cc;font:14px Arial,sans-serif;}
+.meeting-modal-content input:focus-visible {outline:2px solid #c33338;outline-offset:2px;}
+.meeting-modal-content .meeting-close {position:absolute;right:18px;top:16px;border:0;background:#f3ece8;border-radius:50%;font-size:24px;width:35px;height:35px;cursor:pointer;}
+.meeting-modal-content .meeting-copy{margin-top:10px;border:0;cursor:pointer;}
+.meeting-modal-content .meeting-status{margin:0;color:#356d51;font-weight:600;}
+.meeting-modal-content small{color:#9a8b83;line-height:1.5;font-size:11px;}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+ .nav.is-scrolled .nav-in {background:rgba(255,255,255,.95);}
+}
+@media(max-width:870px){
+ .nav{height:70px;}
+ .nav .nav-in{height:70px;width:calc(100% - 36px);}
+ .nav.is-scrolled .nav-in{width:calc(100% - 28px);height:62px;padding:0 15px;transform:translateY(5px);}
+ .nav .nav-brand-icon{width:49px;height:49px;}
+ .nav .nav-menu {right:0;top:calc(100% + 12px);}
+ .pricing-layout{grid-template-columns:1fr;max-width:650px;}
+ .price-story{padding:0 0 10px;}
+}
+@media(max-width:600px){
+ .nav{height:66px;}
+ .nav .nav-in{height:66px;width:calc(100% - 26px);}
+ .nav.is-scrolled .nav-in{width:calc(100% - 20px);height:58px;padding:0 9px;transform:translateY(5px);}
+ .nav .nav-brand-icon {width:43px;height:44px;}
+ .nav .brand {gap:7px;font-size:14px;}
+ .nav .brand-name small {font-size:8px;}
+ .price-story h3{font-size:35px;}
+ .price-card{padding:25px;}
+ .price-card>.price-number{font-size:clamp(61px,13vw,76px);}
+ .meeting-modal-content{padding:28px 21px;}
+}
+@media(prefers-reduced-motion:reduce){ .nav,.nav-in{transition:none!important;} }
+</style><style id="combined-value-and-hero-price">
+/* Unified outcomes / feature modules section */
+.combined-value-section { background:#f8f5f2; }
+.combined-value-grid { display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:clamp(38px,5vw,76px); align-items:start; }
+.combined-difference { scroll-margin-top:110px; }
+.combined-difference h2 { max-width:510px; margin:17px 0 31px; font-size:clamp(37px,3.75vw,54px); line-height:1.13; }
+.combined-difference .benefits { display:grid; grid-template-columns:1fr; gap:0; }
+.combined-difference .benefit { border-top:2px solid #c43b3f; padding:20px 4px 21px; }
+.combined-difference .benefit h3 { font-size:clamp(26px,2.7vw,35px); line-height:1.13; margin:0 0 9px; }
+.combined-difference .benefit b { display:block; color:#c23237; font-size:11px; line-height:1.4; letter-spacing:.11em; }
+.combined-features h2 { font-size:clamp(33px,3vw,43px); line-height:1.15; margin:15px 0 15px; }
+.combined-description { max-width:520px; font-size:14px; line-height:1.72; margin-bottom:22px; }
+.combined-features .features { display:grid; grid-template-columns:1fr; gap:9px; }
+.combined-features .feature { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 15px; align-items:center; padding:17px 18px; min-height:85px; border:1px solid #e8ddd6; border-radius:11px; background:#fff; }
+.combined-features .feature h3 { grid-column:1; grid-row:1; font-size:15px; line-height:1.3; margin:0; }
+.combined-features .feature p { grid-column:1; grid-row:2; font-size:12px; line-height:1.5; color:#81756d; margin:0; }
+.combined-features .feature>b { grid-column:2; grid-row:1/3; font:700 18px/1.2 Arial, sans-serif; white-space:nowrap; color:#302623; }
+.combined-features .features-total { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:22px 1px 0; margin-top:7px; font-size:13px; line-height:1.5; }
+.combined-features .features-total strong { font-size:clamp(29px,3vw,38px); letter-spacing:-.055em; white-space:nowrap; }
+.combined-disclaimer { margin:7px 0 0; font-size:10px; color:#99877e; line-height:1.65; }
+/* Hero CTA + much larger price treatment inspired by the provided sample. */
+.hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:22px; margin-top:33px; }
+.hero-actions .btn { flex-shrink:0; }
+.hero-launch-price { display:flex; flex-direction:column; justify-content:center; border-left:3px solid var(--red); padding:3px 0 2px 16px; gap:2px; min-width:188px; }
+.hero-price-label { font-size:10px; font-weight:800; line-height:1.4; letter-spacing:.13em; color:#c13237; }
+.hero-price-amount { font:normal clamp(38px,3.45vw,50px)/1.05 Georgia,'Times New Roman',serif; letter-spacing:-.06em; color:#bd3338; white-space:nowrap; }
+.hero-price-slots { font-size:11px; font-weight:700; color:#625853; white-space:nowrap; }
+@media (max-width:1090px) {
+ .combined-value-grid { grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr); gap:32px; }
+ .combined-features .feature { padding:15px 14px; }
+ .combined-features .feature h3 { font-size:14px; }
+ .combined-features .feature p { font-size:11px; }
+ .combined-features .feature>b { font-size:16px; }
+}
+@media (max-width:820px) {
+ .combined-value-grid { grid-template-columns:minmax(0,1fr); gap:40px; }
+ .combined-difference h2 { max-width:100%; }
+ .combined-difference .benefits { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+ .combined-difference .benefit h3 { font-size:clamp(23px,3.3vw,29px); }
+ .combined-features .feature { padding:17px 19px; }
+ .combined-features .feature h3 { font-size:16px; }
+ .combined-features .feature p { font-size:12px; }
+ .hero-launch-price { min-width:220px; }
+}
+@media (max-width:600px) {
+ .hero-actions { display:flex; flex-direction:column; align-items:stretch; gap:22px; }
+ .hero-actions .btn { width:100%; }
+ .hero-launch-price { width:fit-content; padding-left:17px; gap:3px; }
+ .hero-price-amount { font-size:49px; }
+ .hero-price-label { font-size:10px; }
+ .hero-price-slots { font-size:12px; }
+ .combined-difference h2 { font-size:39px; }
+ .combined-difference .benefits { grid-template-columns:1fr; gap:0; }
+ .combined-difference .benefit { padding:17px 0; }
+ .combined-difference .benefit h3 { font-size:28px; }
+ .combined-features h2 { font-size:36px; }
+ .combined-features .feature { padding:16px 14px; gap:4px 10px; }
+ .combined-features .feature h3 { font-size:13px; }
+ .combined-features .feature p { font-size:11px; }
+ .combined-features .feature>b { font-size:15px; }
+ .combined-features .features-total { font-size:12px; }
+ .combined-features .features-total strong { font-size:27px; }
+}
+</style><style id="drawer-and-dividers">
+/* Prometheus editorial separators: lines dissolve into the existing section canvas. */
+.editorial-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(20px, 5vw, 72px);
+  height: 40px;
+  z-index: 3;
+}
+.editorial-divider--white { background: #fff; }
+.editorial-divider--warm { background: #f8f5f2; }
+.editorial-divider__line {
+  width: min(100%, 1160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+.editorial-divider__line::before,
+.editorial-divider__line::after {
+  content: '';
+  height: 1px;
+  flex: 1 1 0;
+  background: linear-gradient(to right, transparent 0%, #d9bfb6 70%, #bd7f78 100%);
+}
+.editorial-divider__line::after { transform: rotate(180deg); }
+.editorial-divider__glyph {
+  color: #bb353b;
+  font-family: Georgia,serif;
+  font-size: 17px;
+  line-height: 1;
+  flex: 0 0 auto;
+  opacity: .82;
+}
+/* Remove the oversized blank white seam now that there is an editorial divider. */
+#problems { padding-bottom: 68px; }
+#workflow { padding-top: 78px; }
+#features { padding-bottom: 78px; }
+#pricing { padding-top: 82px; }
+#questions { padding-bottom: 58px; }
+.prefooter { padding-top: 65px; }
+
+/* Beyond Dev-inspired drawer reveal: the page is the foreground sheet.
+   The footer is the burgundy layer behind it, not a fixed overlay. */
+body { background: #642b2d; }
+body > main {
+  position: relative;
+  z-index: 2;
+  background: white;
+  border-radius: 0 0 76px 76px;
+  /* clip-path on the main would create a containing block for sticky children;
+     the page structure has its persistent nav outside the main. */
+  clip-path: inset(0 0 0 0 round 0 0 76px 76px);
+  box-shadow: 0 24px 52px rgba(32,15,18,.12);
+}
+body > .prometheus-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  background: #642b2d;
+  border-radius: 76px 76px 0 0;
+  overflow: hidden;
+}
+.prometheus-footer .footer-artboard {
+  border-radius: 76px 76px 0 0;
+}
+/* Deliberately restrict the parallax to the foreground text.
+   The oversized wordmark remains fixed within the clipped footer artboard. */
+.prometheus-footer .footer-foreground {
+  transform: translate3d(0,var(--footer-reveal-offset,40px),0);
+  will-change: transform;
+}
+@media (max-width: 900px) {
+  body > main { border-radius: 0 0 52px 52px; clip-path: inset(0 0 0 0 round 0 0 52px 52px); }
+  body > .prometheus-footer, .prometheus-footer .footer-artboard { border-radius: 52px 52px 0 0; }
+}
+@media (max-width: 600px) {
+  .editorial-divider { height: 34px; padding-inline: 20px; }
+  .editorial-divider__line { gap: 14px; }
+  .editorial-divider__glyph { font-size: 15px; }
+  #problems { padding-bottom: 46px !important; }
+  #workflow { padding-top: 54px !important; }
+  #features { padding-bottom: 50px !important; }
+  #pricing { padding-top: 62px !important; }
+  #questions { padding-bottom: 40px !important; }
+  .prefooter { padding-top: 50px; }
+  body > main { border-radius: 0 0 36px 36px; clip-path: inset(0 0 0 0 round 0 0 36px 36px); }
+  body > .prometheus-footer, .prometheus-footer .footer-artboard { border-radius: 36px 36px 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prometheus-footer .footer-foreground { transform: none !important; will-change: auto; }
+}
+</style><link href="assets/images/favicon.ico" rel="icon" type="image/x-icon"/><link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="256x256"/><style id="five-benefits-adjustment">
+/* Keep the left outcomes and the right five-module list equally substantive. */
+.combined-difference .combined-benefits { margin-top: 26px; }
+.combined-difference .benefit { padding-top: 19px; padding-bottom: 18px; }
+.combined-difference .benefit h3 { font-size:clamp(24px,2.5vw,33px); line-height:1.13; }
+.combined-difference .benefit b { font-size:11px; }
+@media(max-width:820px) and (min-width:601px){
+  .combined-difference .benefits { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 22px; }
+  .combined-difference .benefit { padding-top:17px;padding-bottom:17px; }
+}
+@media(max-width:600px){
+  .combined-difference .combined-benefits {margin-top:19px;}
+  .combined-difference .benefits {grid-template-columns:1fr;gap:0;}
+  .combined-difference .benefit {padding:16px 0;}
+  .combined-difference .benefit h3 {font-size:27px;}
+}
+</style>
+<style id="furniture-odyssey-rotating-preview">
+/* Animated preview: warm neutral visual language mirrors app/globals.css in FurnitureOdyssey-POS. */
+.fo-preview-outer { padding-bottom:40px; }
+.fo-preview-outer::after { display:none; }
+.fo-preview-window { min-height:0; }
+.fo-preview-chrome { background:#fffdfa; }
+.fo-preview-chrome .screen-txt {font-size:9px;letter-spacing:.06em;}
+.fo-open-demo {display:grid;place-items:center;color:#8e6b4f;text-decoration:none;font-size:16px;width:25px;height:25px;border-radius:7px;}
+.fo-open-demo:hover {background:#f4ede6;}
+.fo-stage { height:380px; background:#eee4d9; overflow:hidden; position:relative; isolation:isolate; outline-offset:-3px; }
+.fo-app-shell {display:grid;grid-template-columns:126px minmax(0,1fr);height:100%;width:100%;font:10px/1.4 Arial,Helvetica,sans-serif;color:#403126;background:#eee4d9;}
+.fo-sidebar {display:flex;flex-direction:column;background:#faf3e9;border-right:1px solid #d4c2af;min-height:0;}
+.fo-brandline {min-height:58px;display:flex;align-items:center;gap:7px;padding:10px 8px;border-bottom:1px solid #dbc8b3;}
+.fo-brandline b {font-size:11px;line-height:1.03;display:block;letter-spacing:-.035em;}
+.fo-brandline small {display:block;font-size:6px;font-weight:750;letter-spacing:.11em;color:#b3864f;margin-top:5px;}
+.fo-brandmark {height:28px;width:28px;background:#b78b56;color:#f9f5f0;display:grid;place-items:center;font:bold 10px Georgia,serif;border-radius:6px;flex-shrink:0;}
+.fo-app-nav {padding:7px 6px 11px;min-height:0;overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;}
+.fo-app-nav::-webkit-scrollbar {display:none;}
+.fo-app-nav button {padding:7px 5px;display:flex;align-items:center;gap:6px;width:100%;text-align:left;border:1px solid transparent;border-radius:6px;background:transparent;color:#78695d;font:600 8.5px/1.25 Arial,sans-serif;cursor:pointer;white-space:nowrap;}
+.fo-app-nav button svg {width:12px;height:12px;flex:none;stroke:currentColor;stroke-width:1.7;}
+.fo-app-nav button:hover {background:#f2e6d5;}
+.fo-app-nav button.active {background:#e8d4b9;color:#463626;border-color:#d6bfa6;}
+.fo-app-right {min-width:0;overflow:hidden;display:flex;flex-direction:column;}
+.fo-app-header {height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 11px;background:#faf3e9;border-bottom:1px solid #dac9b6;flex-shrink:0;}
+.fo-app-header strong {display:block;font-size:9px;line-height:1.15;}
+.fo-app-header span {display:block;color:#7b6b60;font-size:7px;line-height:1.4;}
+.fo-sign-out {padding:6px 7px;border:1px solid #d5c3ae;border-radius:5px;background:#f9f3eb;color:#5d4a3d!important;font-size:8px!important;}
+.fo-app-main {flex:1;overflow:hidden;padding:12px;}
+.fo-app-main h4 {font:700 15px/1.2 Arial,sans-serif;letter-spacing:-.025em;margin:0 0 4px;color:#403126;}
+.fo-app-main p {margin:0 0 9px;color:#78675c;font-size:8.5px;line-height:1.45;}
+.fo-headrow {display:flex;align-items:flex-start;justify-content:space-between;gap:5px;margin-bottom:11px;}
+.fo-main-cta {white-space:nowrap;color:#403126;background:#aac4b8;border:1px solid #9bb5a8;border-radius:5px;padding:6px 9px;font-weight:750;font-size:8px;}
+.fo-bar {border:1px solid #d4bfa8;border-radius:7px;background:#faf3e9;padding:7px;margin-bottom:9px;display:flex;gap:5px;align-items:center;min-height:34px;}
+.fo-input {flex:1;min-width:0;background:#fcf9f5;color:#877a6c;border:1px solid #d8c7b6;border-radius:4px;font-size:7.5px;padding:6px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.fo-select {color:#65564b;background:#fffdfa;border:1px solid #d8c7b6;border-radius:4px;font-size:7px;white-space:nowrap;padding:6px;}
+.fo-metrics {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:9px;}
+.fo-metric {min-width:0;background:#faf3e9;border:1px solid #d3bfa9;padding:9px 8px;border-radius:8px;}
+.fo-metric label {font-size:7px;color:#786b5d;display:block;margin-bottom:5px;}
+.fo-metric b {display:block;font-size:14px;color:#453727;white-space:nowrap;}
+.fo-metric small {display:block;font-size:6.5px;color:#8b7b6c;margin-top:3px;}
+.fo-card {background:#fbf4eb;border:1px solid #d8c4b0;border-radius:8px;overflow:hidden;margin-bottom:9px;}
+.fo-card-head {padding:9px 11px;border-bottom:1px solid #d8c4b0;font-weight:750;font-size:9px;display:flex;justify-content:space-between;}
+.fo-tbl {width:100%;border-collapse:collapse;text-align:left;table-layout:fixed;}
+.fo-tbl th {background:#f0dfc8;color:#736658;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;padding:7px 8px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.fo-tbl td {border-top:1px solid #e4d5c5;font-size:7.5px;padding:7px 8px;color:#524639;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.fo-tbl tbody tr:nth-child(even) {background:#fdf9f3;}
+.fo-tbl td:first-child {font-weight:650;}
+.fo-tag {display:inline-block;padding:3px 5px;background:#eee0c8;border:1px solid #ddc8a8;border-radius:999px;color:#6d543a;font-size:6px;font-weight:700;}
+.fo-tag.green {background:#e5ebd9;color:#586848;border-color:#ccd7b9;}
+.fo-tag.red {background:#f2ddd5;color:#9a6055;border-color:#e6c8bd;}
+.fo-split {display:grid;grid-template-columns:1.25fr .85fr;gap:7px;}
+.fo-split .fo-card {margin:0;}
+.fo-chart {display:block;width:100%;height:83px;background:#fbf4eb;}
+.fo-simple-row {display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px solid #e7d9c9;font-size:7.5px;gap:8px;}
+.fo-simple-row:last-child {border-bottom:0;}
+.fo-simple-row strong {font-size:8px;}
+.fo-mini-tabs {display:flex;gap:5px;margin-bottom:8px;}
+.fo-mini-tabs span {padding:5px 8px;background:#f9f3e9;border:1px solid #d3c1af;color:#746153;border-radius:5px;font-size:7px;}
+.fo-mini-tabs span:first-child {background:#e6d2b4;color:#4a382d;}
+.fo-progress {height:6px;border-radius:8px;background:#e5d5c2;overflow:hidden;margin:5px 0 10px;}
+.fo-progress>i {display:block;width:68%;height:100%;background:#9aab8c;}
+.fo-settings {display:grid;grid-template-columns:repeat(2,1fr);gap:7px;padding:12px;}
+.fo-settings span {display:block;font-size:7px;color:#76685d;margin-bottom:5px;}
+.fo-settings b {display:block;font-size:8px;font-weight:500;background:#fffaf4;border:1px solid #d6c3ac;padding:7px;border-radius:4px;}
+.fo-furniture {display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.fo-item {padding:6px;background:#faf3e9;border:1px solid #d6c4b1;border-radius:7px;min-width:0;}
+.fo-item-photo {height:51px;display:grid;place-items:center;background:#eee6db;border-radius:4px;margin-bottom:7px;}
+.fo-item-photo svg {width:50px;height:46px;stroke:#b08f68;fill:#c7b39c;stroke-width:2;}
+.fo-item b {font-size:8px;display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.fo-item span {display:block;font-size:7px;color:#7d6d5e;}
+.fo-full-shot {position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:top left;opacity:0;pointer-events:none;z-index:3;transition:opacity .28s ease;}
+.fo-full-shot.visible {opacity:1;}
+.fo-screen-fade {position:absolute;inset:0;pointer-events:none;opacity:0;z-index:4;background:#f6efe6;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);transition:opacity .16s ease;}
+.fo-stage.transitioning .fo-screen-fade {opacity:.44;}
+.fo-stage.transitioning .fo-app-main {filter:blur(1.8px);opacity:.78;}
+.fo-app-main {transition:filter .18s ease,opacity .18s ease;}
+.fo-preview-footer {position:absolute;left:26px;right:0;bottom:0;height:34px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 13px;background:transparent;}
+.fo-preview-info {display:flex;align-items:center;gap:7px;font-size:9px;color:#826c62;font-weight:750;}
+.fo-preview-info #fo-screen-index {font-size:8px;color:#a38f81;font-weight:500;}
+.fo-preview-live {background:#b88153;width:6px;height:6px;border-radius:50%;box-shadow:0 0 0 3px #eddcc8;}
+.fo-preview-buttons {display:flex;align-items:center;gap:4px;}
+.fo-preview-buttons button {background:transparent;border:1px solid #ddcfc5;border-radius:100%;color:#916e5c;cursor:pointer;width:24px;height:24px;font-size:17px;line-height:20px;}
+.fo-preview-buttons button:hover,.fo-preview-buttons button:focus-visible {color:#a13236;border-color:#bc8889;}
+@media(max-width:600px) { .fo-preview-outer {padding:14px 0 40px 14px;}.fo-preview-footer{left:14px;}.fo-stage{height:310px;}.fo-app-shell{grid-template-columns:99px minmax(0,1fr)}.fo-brandline{padding:6px 4px;gap:4px}.fo-brandmark{width:23px;height:23px;font-size:8px}.fo-brandline b{font-size:9px}.fo-app-nav button{font-size:7px;padding:6px 3px;gap:3px}.fo-app-nav button svg{width:10px;height:10px}.fo-app-main{padding:7px}.fo-bar{padding:4px}.fo-select{display:none}.fo-metric{padding:6px 4px}.fo-metric b{font-size:10px}.fo-metric label{font-size:6px}.fo-tbl th,.fo-tbl td{padding:5px 4px;font-size:6px}.fo-app-main h4{font-size:12px}.fo-app-main p{font-size:7px}.fo-app-header{height:30px} }
+@media(prefers-reduced-motion:reduce) { .fo-full-shot,.fo-app-main,.fo-screen-fade {transition:none!important;} }
+</style>
+
+<style id="centered-discounted-packages">
+/* Preserve the existing warm section but give the five packages full, centered width. */
+#features .combined-value-grid {
+  display: block;
+  width: min(960px, calc(100% - 64px));
+  max-width: 960px;
+  margin-inline: auto;
+}
+#features .combined-features { width: 100%; min-width: 0; }
+#features .combined-features h2 { max-width: 760px; }
+#features .combined-description { max-width: 740px; }
+#features .feature { grid-template-columns: minmax(0,1fr) auto; gap: 5px 22px; padding: 19px 24px; }
+#features .feature h3 { grid-column: 1; grid-row: 1; }
+#features .feature p { grid-column: 1; grid-row: 2; }
+#features .module-pricing {
+  grid-column: 2; grid-row: 1 / 3; align-self: center;
+  min-width: 108px; display: flex; flex-direction: column;
+  align-items: flex-end; justify-content: center; gap: 3px; white-space: nowrap;
+}
+#features .module-estimated-value { color:#958781; font:500 13px/1.25 Arial,Helvetica,sans-serif; text-decoration-color:#b43d41; text-decoration-thickness:2px; }
+#features .module-bundle-price { color:#b63036; font:700 21px/1.15 Arial,Helvetica,sans-serif; letter-spacing:-.025em; }
+#features .features-total { margin-top: 7px; padding: 25px 4px 7px; gap: 26px; align-items: end; }
+#features .bundle-value-summary { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+#features .bundle-value-summary > span { color:#786d66; font:600 12px/1.4 Arial,Helvetica,sans-serif; }
+#features .bundle-value-summary > s { color:#776f68; font:normal 22px/1.25 Georgia,serif; text-decoration-color:#b43d41; text-decoration-thickness:2px; }
+#features .bundle-value-summary > small { color:#a33237; font:700 12px/1.5 Arial,Helvetica,sans-serif; }
+#features .bundle-price-summary { display:flex; flex-direction:column; align-items:flex-end; gap:6px; text-align:right; }
+#features .bundle-price-summary > span { color:#a43136; font:800 10px/1.4 Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.1em; }
+#features .bundle-price-summary > strong { color:#bd3434; font:normal clamp(39px,5vw,59px)/1 Georgia,serif; letter-spacing:-.055em; }
+#features .combined-disclaimer { margin-top: 10px; }
+@media (max-width:600px) {
+  #features .combined-value-grid { width:calc(100% - 36px); }
+  #features .feature { padding:16px 13px; gap:5px 8px; }
+  #features .module-pricing { min-width:85px; }
+  #features .module-estimated-value { font-size:11px; }
+  #features .module-bundle-price { font-size:17px; }
+  #features .features-total { flex-wrap:wrap; align-items:flex-end; gap:15px; }
+  #features .bundle-price-summary { align-items:flex-start; text-align:left; }
+  #features .bundle-price-summary > strong { font-size:43px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #features .module-pricing { transition:none; }
+}
+</style>
+<style id="furniture-video-demo-styles">
+/* Real product demo, integrated with the existing editorial design. */
+.demo-showcase { border:1px solid #e8ddd7; border-radius:22px; background:#fffdfb; padding:clamp(16px,2.5vw,28px); box-shadow:0 18px 46px rgba(53,30,26,.055); }
+.demo-showcase-header { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:20px; }
+.demo-showcase-header h3 { margin:9px 0 7px; font:normal clamp(28px,3vw,38px)/1.15 Georgia,'Times New Roman',serif; letter-spacing:-.045em; }
+.demo-showcase-header p { margin:0; font-size:14px; line-height:1.65; max-width:680px; }
+.demo-duration { flex-shrink:0; white-space:nowrap; border:1px solid #ead7cf; background:#f7f0eb; color:#984043; border-radius:100px; padding:8px 12px; font-size:10px; font-weight:800; letter-spacing:.09em; }
+.demo-video-frame { position:relative; overflow:hidden; width:100%; aspect-ratio:16 / 9; background:#181615; border-radius:15px; border:1px solid #d7ccc6; isolation:isolate; }
+.demo-video-frame video { display:block; width:100%; height:100%; object-fit:contain; background:#1b1516; }
+.demo-video-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:1; width:76px; height:76px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.64); border-radius:50%; background:rgba(100,43,45,.92); box-shadow:0 10px 34px rgba(19,12,12,.4); color:#fff; cursor:pointer; transition:background .2s ease,box-shadow .2s ease,opacity .2s ease; }
+.demo-video-play span { font-size:23px; margin-left:4px; }
+.demo-video-play:hover { background:#bd3434; box-shadow:0 12px 40px rgba(19,12,12,.45); }
+.demo-video-frame.is-playing .demo-video-play { opacity:0; visibility:hidden; pointer-events:none; }
+.demo-showcase-footer { display:flex; justify-content:space-between; align-items:center; gap:12px 25px; padding:19px 1px 0; font-size:12px; line-height:1.65; color:#7d706a; }
+.demo-showcase-footer a { color:#a92d33; font-size:13px; font-weight:800; text-underline-offset:4px; white-space:nowrap; }
+@media(max-width:600px) {
+  .demo-showcase { padding:12px; border-radius:17px; }
+  .demo-showcase-header { align-items:start; flex-direction:column; gap:11px; padding:6px 4px 0; }
+  .demo-showcase-header h3 { font-size:27px; }
+  .demo-showcase-header p { font-size:12px; }
+  .demo-duration { font-size:9px; }
+  .demo-video-frame { border-radius:11px; }
+  .demo-video-play { height:58px; width:58px; }
+  .demo-video-play span { font-size:18px; }
+  .demo-showcase-footer { flex-direction:column; align-items:flex-start; padding:15px 5px 6px; }
+}
+@media(prefers-reduced-motion:reduce) { .demo-video-play { transition:none; } }
+</style>
+</head>
+<body>
+<header class="nav" id="top">
+<div class="nav-in">
+<a aria-label="Furniture Odyssey, back to overview" class="brand" href="#overview">
+<img alt="Prometheus and Furniture Odyssey brand icons" class="nav-brand-icon" height="56" src="assets/images/brand-icons.webp" width="58"/>
+<span class="brand-name">Furniture Odyssey <small>by Prometheus</small></span>
+</a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu" class="mobile-nav-toggle" type="button">
+<span aria-hidden="true" class="hamburger"><i></i><i></i><i></i></span>
+</button>
+<nav aria-label="Main navigation" class="nav-menu" id="primary-navigation"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#questions">FAQ</a><a class="btn btn-dark" href="https://furniture-odyssey-pos.vercel.app/demo" rel="noopener noreferrer" target="_blank">Live Demo ↗</a></nav>
+</div>
+</header>
+<main>
+<section aria-labelledby="hero-heading" class="hero" id="overview">
+<div class="container hero-grid">
+<div>
+<span class="eyebrow">For growing furniture businesses</span>
+<h1 id="hero-heading">Transform your business in just <em>30 days.</em></h1>
+<p class="description">Less time juggling spreadsheets, notebooks, and Messenger conversations. One centralized system for quotations, customers, orders, payments, and deliveries.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="https://furniture-odyssey-pos.vercel.app/demo" rel="noopener noreferrer" target="_blank">I WANT TO SEE IT IN ACTION <span aria-hidden="true">↗</span></a><div aria-label="Limited launch price 11,999 pesos, only five slots available" class="hero-launch-price">
+<span class="hero-price-label">LIMITED LAUNCH PRICE</span>
+<strong class="hero-price-amount">₱11,999</strong>
+<span class="hero-price-slots">Only 5 launch slots available</span>
+</div></div>
+</div>
+<div aria-label="Automatically rotating preview of Furniture Odyssey application pages" class="screen-wrap fo-preview-outer">
+  <div class="screen fo-preview-window">
+    <div class="screen-top fo-preview-chrome">
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="screen-txt">FURNITURE ODYSSEY / SALES STUDIO</span>
+      <a href="https://furniture-odyssey-pos.vercel.app/demo" target="_blank" rel="noopener noreferrer" class="fo-open-demo" aria-label="Open Furniture Odyssey live demo in a new tab">↗</a>
+    </div>
+    <div class="fo-stage" id="fo-showcase" tabindex="0" aria-label="Rotating Furniture Odyssey module previews. Select a sidebar item to change pages, or use left and right arrow keys.">
+      <div class="fo-app-shell" id="fo-app-shell">
+        <aside class="fo-sidebar">
+          <div class="fo-brandline">
+            <div class="fo-brandmark">FO</div>
+            <div><b>Furniture<br>Odyssey</b><small>SALES STUDIO</small></div>
+          </div>
+          <nav class="fo-app-nav" aria-label="Product preview navigation" id="fo-preview-nav"></nav>
+        </aside>
+        <div class="fo-app-right">
+          <header class="fo-app-header"><div><strong>Demo Admin</strong><span>Admin</span></div><span class="fo-sign-out">Sign out ↗</span></header>
+          <main class="fo-app-main" id="fo-app-main" aria-live="off"></main>
+        </div>
+      </div>
+      <img class="fo-full-shot" id="fo-screen-shot" alt="" decoding="async" fetchpriority="low" />
+      <div class="fo-screen-fade" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="fo-preview-footer">
+    <div class="fo-preview-info"><span class="fo-preview-live"></span><span id="fo-screen-label">Dashboard</span><span id="fo-screen-index">01 / 12</span></div>
+    <div class="fo-preview-buttons"><button type="button" id="fo-preview-prev" aria-label="Previous module">‹</button><button type="button" id="fo-preview-next" aria-label="Next module">›</button></div>
+  </div>
+</div>
+</section>
+<div class="proof-strip"><div class="container proof-inner"><span>Furniture-specific workflows</span><span>Free user training</span><span>Free assisted data migration</span></div></div>
+<section class="block" id="problems"><div class="container"><div class="section-header"><span class="eyebrow">Sound familiar?</span><h2>Is this how you run your business?</h2><p>The busiest part of running a furniture business shouldn't be finding the information you already have.</p></div><div class="pain-grid">
+<article class="pain"><span aria-hidden="true" class="symbol">◎</span><h3>Too many Messenger conversations</h3><p>Quotations, customer details, and payment confirmations get buried in endless chats.</p></article>
+<article class="pain"><span aria-hidden="true" class="symbol">▤</span><h3>Spreadsheets and notebooks</h3><p>Manual updates take time, and missed entries can create costly confusion.</p></article>
+<article class="pain"><span aria-hidden="true" class="symbol">▧</span><h3>Slow quotation preparation</h3><p>Every custom quantity, price, discount, and revision means more repetitive work.</p></article>
+<article class="pain"><span aria-hidden="true" class="symbol">◉</span><h3>Payment and balance confusion</h3><p>Checking who has paid and who still owes can mean opening several records.</p></article>
+<article class="pain"><span aria-hidden="true" class="symbol">↗</span><h3>Orders and delivery tracking</h3><p>Pending, paid, scheduled, and completed orders are difficult to coordinate.</p></article>
+<article class="pain"><span aria-hidden="true" class="symbol">▤</span><h3>No clear sales history</h3><p>It's harder to review previous transactions, monitor repeat customers, and see how your business is performing.</p></article>
+</div></div></section><div aria-label="Section separator" class="editorial-divider editorial-divider--white" role="separator"><div class="editorial-divider__line"><span aria-hidden="true" class="editorial-divider__glyph">✦</span></div></div>
+<section class="block solution" id="workflow"><div class="container"><div class="section-header"><span class="eyebrow">The solution</span><h2>From quotation to delivery.<br/>All in one place.</h2><p>Follow a customer transaction from the first quotation through the final delivery.</p></div><div class="steps"><div class="step"><span class="step-number">STEP ONE</span><h3>Quotation</h3><p>Build custom quotes and apply negotiated discounts.</p></div><div class="step"><span class="step-number">STEP TWO</span><h3>Order</h3><p>Turn an approved quotation into an order.</p></div><div class="step"><span class="step-number">STEP THREE</span><h3>Payment</h3><p>Record down payments and remaining balances.</p></div><div class="step"><span class="step-number">STEP FOUR</span><h3>Delivery</h3><p>Organize scheduled and partial deliveries.</p></div></div><div class="demo-showcase" aria-labelledby="demo-video-heading">
+  <div class="demo-showcase-header">
+    <div>
+      <span class="eyebrow">Actual product demo</span>
+      <h3 id="demo-video-heading">See Furniture Odyssey in action.</h3>
+      <p>A real walkthrough of the dashboard, quotation builder, and quotation management workflow.</p>
+    </div>
+    <span class="demo-duration" aria-label="Video duration: 2 minutes and 36 seconds">02:36 DEMO</span>
+  </div>
+  <div class="demo-video-frame">
+    <video id="furniture-demo-video" controls playsinline preload="none" poster="assets/images/demo-poster.webp" aria-label="Furniture Odyssey software walkthrough video">
+      <source src="assets/videos/furniture-odyssey-demo.mp4" type="video/mp4" />
+      Your browser cannot play the video. <a href="assets/videos/furniture-odyssey-demo.mp4">Open the demo recording</a>.
+    </video>
+    <button type="button" class="demo-video-play" aria-label="Play the Furniture Odyssey demo" aria-controls="furniture-demo-video">
+      <span aria-hidden="true">▶</span>
+    </button>
+  </div>
+  <div class="demo-showcase-footer">
+    <span>Watch the complete 2-minute walkthrough, or explore the live system yourself.</span>
+    <a href="https://furniture-odyssey-pos.vercel.app/demo" rel="noopener noreferrer" target="_blank">Try the live demo ↗</a>
+  </div>
+</div></div></section>
+<section aria-labelledby="features-heading" class="block combined-value-section" id="features">
+<div class="container combined-value-grid">
+  <div class="combined-features">
+    <span class="eyebrow">What you get</span>
+    <h2 id="features-heading">One system.<br/>Everything connected.</h2>
+    <p class="combined-description">Five integrated packages designed around how furniture businesses handle everyday sales operations.</p>
+    <div class="combined-module-list">
+      <div class="features">
+<article class="feature">
+  <h3>Customer &amp; Product Management</h3>
+  <p>Customer directory, products, catalogue content.</p>
+  <div class="module-pricing" aria-label="Estimated value ₱7,500, discounted bundle allocation ₱4,500">
+    <s class="module-estimated-value">₱7,500</s>
+    <strong class="module-bundle-price">₱4,500</strong>
+  </div>
+</article>
+<article class="feature">
+  <h3>Quotations &amp; Business Documents</h3>
+  <p>Quotation builder, operational PDFs, documents.</p>
+  <div class="module-pricing" aria-label="Estimated value ₱9,000, discounted bundle allocation ₱5,500">
+    <s class="module-estimated-value">₱9,000</s>
+    <strong class="module-bundle-price">₱5,500</strong>
+  </div>
+</article>
+<article class="feature">
+  <h3>Orders &amp; Payment Tracking</h3>
+  <p>Order management, payments, outstanding balances.</p>
+  <div class="module-pricing" aria-label="Estimated value ₱9,000, discounted bundle allocation ₱5,500">
+    <s class="module-estimated-value">₱9,000</s>
+    <strong class="module-bundle-price">₱5,500</strong>
+  </div>
+</article>
+<article class="feature">
+  <h3>Deliveries &amp; Sales Reporting</h3>
+  <p>Delivery schedules, sales history, reports.</p>
+  <div class="module-pricing" aria-label="Estimated value ₱7,500, discounted bundle allocation ₱4,500">
+    <s class="module-estimated-value">₱7,500</s>
+    <strong class="module-bundle-price">₱4,500</strong>
+  </div>
+</article>
+<article class="feature">
+  <h3>Dashboard &amp; Admin Controls</h3>
+  <p>Dashboard, staff accounts, permissions, settings.</p>
+  <div class="module-pricing" aria-label="Estimated value ₱6,999, discounted bundle allocation ₱4,999">
+    <s class="module-estimated-value">₱6,999</s>
+    <strong class="module-bundle-price">₱4,999</strong>
+  </div>
+</article>
+      </div>
+    </div>
+    <div class="combined-module-total">
+      <div class="features-total">
+        <div class="bundle-value-summary">
+          <span>Combined estimated module value</span>
+          <s>₱39,999</s>
+          <small>Estimated bundle savings: ₱15,000</small>
+        </div>
+        <div class="bundle-price-summary">
+          <span>Post-launch bundle price</span>
+          <strong>₱24,999</strong>
+        </div>
+      </div>
+    </div>
+    <p class="combined-disclaimer">Module valuations and discounted allocations are illustrative, not historical selling prices. ₱24,999 is the intended post-launch price; the limited introductory offer is shown below.</p>
+  </div>
+</div>
+</section><div aria-label="Section separator" class="editorial-divider editorial-divider--warm" role="separator"><div class="editorial-divider__line"><span aria-hidden="true" class="editorial-divider__glyph">✦</span></div></div>
+<section aria-labelledby="pricing-heading" class="block pricing" id="pricing"><div class="container"><div class="pricing-head"><span class="eyebrow">Limited launch offer</span><h2 id="pricing-heading">Invest in a better way to work.</h2><p>Get the complete system with free onboarding, training, and assisted data migration.</p></div><div class="pricing-layout"><div class="price-story"><h3>Same complete system.<br/>Different price.</h3><p>Our introductory offer is reserved for the first five furniture businesses taking the next step toward more organized operations.</p><p class="launch-warning">Once those five launch slots are filled, the price <em>may go more than double.</em></p><div class="qualification-note"><span aria-hidden="true" class="qualifying-icon">✳</span><div><strong>We're looking for real businesses.</strong><p>Furniture businesses that genuinely want to streamline their operations.</p></div></div><div class="prices-note"><span>Combined estimated module value</span><span class="prior-amount">₱39,999</span></div><div class="prices-note"><span>Startup selling price</span><span class="prior-amount">₱24,999</span></div><div class="prices-note prices-note-emphasis"><span>Your introductory advantage</span><span>₱13,000</span></div></div><div class="price-card"><span class="tag">ONLY FIVE LAUNCH SLOTS</span><div class="price-number">₱11,999</div><p>Introductory price for the complete Furniture Odyssey system.</p><ul><li>All five feature packages</li><li>Free onboarding and user training</li><li>Free assisted data migration</li><li>Guided product walkthrough</li></ul><a class="btn btn-primary" href="https://furniture-odyssey-pos.vercel.app/demo" rel="noopener noreferrer" target="_blank">I WANT TO SEE IT IN ACTION ↗</a><small>Limited to the first five eligible customers.</small><p class="pricing-disclaimer">₱39,999 is a combined estimated module value, not a previous selling price. ₱24,999 is the intended post-launch price.</p></div></div></div></section>
+<section class="block faq-section" id="questions"><div class="container"><span class="eyebrow">Questions &amp; guarantee</span><h2>Still have questions?</h2><div class="faqs">
+<details class="faq" name="faqs"><summary>What if I don't have time to learn?</summary><div class="faq-answer"><p>We provide free onboarding and user training, including a guided walkthrough of customers, quotations, orders, payments, and deliveries. You and your team won't need to learn everything on your own.</p></div></details>
+<details class="faq" name="faqs"><summary>Can I keep using Messenger?</summary><div class="faq-answer"><p>Yes. You can continue speaking with customers on Messenger and use Furniture Odyssey for organizing business records, quotations, orders, payments, and deliveries. Messenger is not directly integrated with the current system.</p></div></details>
+<details class="faq" name="faqs"><summary>Will my existing data transfer?</summary><div class="faq-answer"><p>Free assisted data migration is included. We'll help move supported existing records into the new system, subject to agreed data formats, volume, and verification. Handwritten and unusual historical records may need additional preparation.</p></div></details>
+<details class="faq" name="faqs"><summary>What does the 30-day guarantee cover?</summary><div class="faq-answer"><p>We aim to help customers transition to a more organized workflow within 30 days, supported by onboarding and training. The specific terms of any formal 30-day guarantee, including eligibility and remedies, will be communicated before purchase.</p></div></details>
+</div></div></section><div aria-label="Section separator" class="editorial-divider editorial-divider--white" role="separator"><div class="editorial-divider__line"><span aria-hidden="true" class="editorial-divider__glyph">✦</span></div></div>
+<section class="prefooter"><div class="container"><div class="inner"><div><h2>Same business. Less paperwork. More control.</h2><p>See how Furniture Odyssey can fit the way you work.</p></div><a class="btn" href="https://furniture-odyssey-pos.vercel.app/demo" rel="noopener noreferrer" target="_blank">Explore the live demo ↗</a></div></div></section>
+</main>
+<footer aria-label="Prometheus editorial footer" class="prometheus-footer" id="contact">
+<div class="footer-artboard">
+<div class="footer-foreground">
+<div class="footer-top"><span class="brand-label">PROMETHEUS</span><a class="contact-label" href="#contact-actions">CONTACT US</a></div>
+<div class="footer-main"><div><h2 class="footer-heading">Let's build a system around how your business actually works.</h2><p class="footer-intro">Tell us where work becomes repetitive, fragmented, or difficult to keep track of. We'll start there.</p></div></div>
+<div class="footer-lower" id="contact-actions"><a aria-haspopup="dialog" class="footer-cta" href="#meeting-request">Book a 30-minute meeting with the team ↗</a><nav aria-label="Footer navigation" class="footer-links"><a href="#overview">Overview</a><a href="#features">Systems</a><a href="#workflow">Approach</a><a href="#pricing">Pricing</a><a href="#questions">FAQ</a><a href="#top">Back to top ↑</a></nav></div>
+</div>
+<div aria-hidden="true" class="footer-wordmark">PROMETHEUS</div>
+</div>
+</footer>
+<dialog aria-labelledby="meeting-title" class="meeting-dialog" id="meeting-request"><div class="meeting-modal-content">
+<button aria-label="Close meeting request" class="meeting-close" type="button">×</button>
+<span class="eyebrow">LET'S TALK</span>
+<h2 id="meeting-title">Book a 30-minute meeting.</h2>
+<p>Tell us what you would like to discuss with the Furniture Odyssey team. This preview does not yet connect to a live booking calendar.</p>
+<label for="meeting-name">Your name</label><input autocomplete="name" id="meeting-name" placeholder="Business owner or representative" type="text"/>
+<label for="meeting-business">Business name</label><input id="meeting-business" placeholder="Your furniture business" type="text"/>
+<button class="btn btn-primary meeting-copy" type="button">Copy meeting request</button>
+<p aria-live="polite" class="meeting-status" role="status"></p>
+<small>When your team has a calendar booking URL, replace this preview with the live booking flow.</small>
+</div></dialog><script>
+  (function () {
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const menu = document.getElementById('primary-navigation');
+    const navLinks = Array.from(menu.querySelectorAll('a[href^="#"]'));
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+    }
+    toggle.addEventListener('click', () => {
+      const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      menu.classList.toggle('is-open', willOpen);
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      toggle.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.nav')) closeMenu(); });
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              const isCurrent = link.getAttribute('href') === '#' + entry.target.id;
+              link.classList.toggle('is-current', isCurrent);
+              if (isCurrent) link.setAttribute('aria-current', 'location');
+              else link.removeAttribute('aria-current');
+            });
+          }
+        }
+      }, { rootMargin: '-23% 0px -63% 0px', threshold: 0 });
+      sections.forEach(section => observer.observe(section));
+    }
+  })();
+
+  (function () {
+    const header = document.querySelector('.nav');
+    function updateHeader() { header.classList.toggle('is-scrolled', window.scrollY > 40); }
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, {passive:true});
+    const dialog = document.getElementById('meeting-request');
+    document.querySelectorAll('a[href="#meeting-request"]').forEach(a => a.addEventListener('click',e=>{
+      e.preventDefault();
+      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+    }));
+    dialog.querySelector('.meeting-close').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',e => {if(e.target === dialog) dialog.close();});
+    dialog.querySelector('.meeting-copy').addEventListener('click',async()=>{
+      const name=dialog.querySelector('#meeting-name').value.trim();
+      const business=dialog.querySelector('#meeting-business').value.trim();
+      const body=`Hello Prometheus team, I would like to request a 30-minute meeting about Furniture Odyssey.\nName: ${name||'(Your name)'}\nBusiness: ${business||'(Business name)'}\nPlease let me know your available schedules.`;
+      const status=dialog.querySelector('.meeting-status');
+      try { await navigator.clipboard.writeText(body); status.textContent='Request copied. Send it to your Prometheus contact to arrange a schedule.'; }
+      catch (err) { status.textContent='Select and copy this request: '+body; }
+    });
+  })();
+</script>
+<script id="footer-parallax">
+(() => {
+  const footer = document.querySelector('.prometheus-footer');
+  const foreground = footer?.querySelector('.footer-foreground');
+  const main = document.querySelector('body > main');
+  if (!footer || !foreground || !main) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let pending = false;
+  function update() {
+    pending = false;
+    if (reducedMotion.matches) {
+      footer.style.setProperty('--footer-reveal-offset','0px');
+      return;
+    }
+    // A sticky footer always reports a pinned viewport rectangle.
+    // Use the preceding main sheet's natural bottom as its document start,
+    // yielding the Framer Motion offset ["start end", "end end"] curve.
+    const footerStart = main.getBoundingClientRect().bottom + window.scrollY;
+    const denom = Math.max(1, footer.offsetHeight);
+    const progress = Math.min(1,Math.max(0,(window.scrollY + window.innerHeight - footerStart)/denom));
+    footer.style.setProperty('--footer-reveal-offset', `${(40*(1-progress)).toFixed(2)}px`);
+  }
+  function requestUpdate() {
+    if (!pending) { pending = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll',requestUpdate,{passive:true});
+  window.addEventListener('resize',requestUpdate,{passive:true});
+  reducedMotion.addEventListener?.('change',requestUpdate);
+  requestUpdate();
+})();
+</script><script id="furniture-odyssey-rotating-script">
+(function initFurnitureOdysseyPreview() {
+  const stage = document.getElementById('fo-showcase');
+  if (!stage) return;
+  const main = document.getElementById('fo-app-main');
+  const nav = document.getElementById('fo-preview-nav');
+  const image = document.getElementById('fo-screen-shot');
+  const label = document.getElementById('fo-screen-label');
+  const index = document.getElementById('fo-screen-index');
+  const names = ['Dashboard','Customer Directory','Products','Catalogue','Quotations','Orders','Payments','Deliveries','Documents','Sales History','Users','Settings'];
+  const routes = ['dashboard','customers','products','catalogue','quotations','orders','payments','deliveries','documents','sales-history','users','settings'];
+  const icons = ['▦','♙','▣','▤','▧','▥','◫','➜','▤','▥','♙','⚙'];
+  // These paths are kept in one source of truth for screenshots and application navigation.
+  const screenshotDirectory = './furniture-odyssey-screenshots/';
+  const intervalMs = 2000;
+  const speedMs = 260;
+  const pathExists = new Array(names.length).fill(null);
+  let selected = 0;
+  let timer = null;
+  let transitionTimer = null;
+  let pausedByHover = false;
+  let isVisible = true;
+  let reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const allButtons = [];
+  const table = (cols, rows) => `<div class="fo-card"><table class="fo-tbl"><thead><tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  const badge = (s, color='') => `<span class="fo-tag ${color}">${s}</span>`;
+  const head = (title, desc, action='') => `<div class="fo-headrow"><div><h4>${title}</h4><p>${desc}</p></div>${action?`<span class="fo-main-cta">${action}</span>`:''}</div>`;
+  const filters = (input, ...choices) => `<div class="fo-bar"><div class="fo-input">⌕ &nbsp; ${input}</div>${choices.map(c=>`<span class="fo-select">${c}⌄</span>`).join('')}</div>`;
+  const metric = (name, value, info='') => `<div class="fo-metric"><label>${name}</label><b>${value}</b>${info?`<small>${info}</small>`:''}</div>`;
+  const chair = `<svg viewBox="0 0 70 65" aria-hidden="true"><path d="M21 28Q20 15 32 15h14q9 0 9 11v16H20V29Z"/><path d="M16 40h43v8H16z"/><path d="M22 47v14M53 47v14" fill="none" stroke-linecap="round"/></svg>`;
+  const chart = `<svg viewBox="0 0 250 83" class="fo-chart" preserveAspectRatio="none" aria-hidden="true"><path d="M0 73H250M0 45H250M0 18H250" stroke="#e5d7c7" stroke-width="1"/><path d="M0 74L23 68L48 71L75 43L100 54L128 32L156 39L185 18L207 27L250 6L250 83H0Z" fill="#b2c1a4" opacity=".36"/><path d="M0 74L23 68L48 71L75 43L100 54L128 32L156 39L185 18L207 27L250 6" fill="none" stroke="#aa8650" stroke-width="2.5"/></svg>`;
+  const views = [
+    () => head('Dashboard','Sales operations workspace')+`<div class="fo-metrics">${metric('Unfinished orders','24','Orders requiring attention')}${metric('Payments received','₱42,000','Selected period')}${metric('Open balances','₱18,500','Outstanding')}</div><div class="fo-split"><section class="fo-card"><div class="fo-card-head">Needs Attention <span>View all ↗</span></div>${['Order FO-2026-0108 · Balance due','Upcoming delivery · Sofa Set','Pending quotation · Maria Reyes'].map(x=>`<div class="fo-simple-row"><span>${x}</span><span style="color:#967244">↗</span></div>`).join('')}</section><section class="fo-card"><div class="fo-card-head">Recent Activity</div>${['Quotation accepted','Payment recorded','Delivery scheduled'].map(x=>`<div class="fo-simple-row"><span>${x}</span></div>`).join('')}</section></div>`,
+    () => head('Customer Directory','Find customer records quickly by name, company, or contact detail.','+ Add customer')+filters('Search customer name, company, phone, Viber, Facebook...','All types','All staff')+table(['Customer','Type','Source','Contact'],[['Maria Reyes','Individual','Facebook', '09•• ••• 1345'],['Dream Home MNL','Company','Referral','sales@demo.ph'],['Juan Dela Cruz','Individual','Walk-in','09•• ••• 2901'],['A. Furniture Co.','Company','Messenger','09•• ••• 1018']]),
+    () => head('Products','Reusable product references for quotations and orders.','+ Add product')+filters('Search name, code, category or details','Any status','All categories')+`<div class="fo-furniture">${[['Tolix Dining Chair','₱2,500'],['Modern Lounge Chair','₱5,990'],['Industrial Bar Stool','₱3,900']].map(p=>`<div class="fo-item"><div class="fo-item-photo">${chair}</div><b>${p[0]}</b><span>${p[1]}</span></div>`).join('')}</div>`,
+    () => head('Catalogue Content','Manage public catalogue page text, headings, and section copy.','Save changes')+`<div class="fo-mini-tabs"><span>All pages</span><span>Homepage</span><span>Products</span></div>${table(['Page','Section','Field','Value'],[['Homepage','Hero','Heading','Quality furniture for every space'],['Homepage','Hero','Subtitle','Explore our furniture selection'],['Products','Featured','Title','Featured Collections'],['Products','Details','Button label','Browse catalogue']])}`,
+    () => head('Quotations','Search, review, download, and update quotation records.','+ New quotation')+`<div class="fo-mini-tabs"><span>Active</span><span>Converted</span><span>All</span></div>`+filters('Search quotations','All statuses')+table(['Quotation','Customer','Status','Total'],[['QT-2026-0121','Maria Reyes',badge('Draft'),'₱24,990'],['QT-2026-0120','Dream Home MNL',badge('Sent'),'₱45,500'],['QT-2026-0119','Juan Dela Cruz',badge('Accepted','green'),'₱18,200']]),
+    () => head('Orders','Order control center for confirmed customer sales.','+ New order')+`<div class="fo-mini-tabs"><span>All orders</span><span>Needs action</span><span>Unfinished</span></div>`+filters('Search orders or customers','Any status')+table(['Order','Customer','Payment','Delivery'],[['FO-2026-0108','Maria Reyes',badge('Partially paid'),'Scheduled'],['FO-2026-0107','Dream Home MNL',badge('Paid','green'),'Delivered'],['FO-2026-0106','Juan Dela Cruz',badge('Unpaid','red'),'Not scheduled']]),
+    () => head('Payments','Track recorded payments, receipts, and remaining order balances.')+`<div class="fo-metrics">${metric('Open balance total','₱83,750')}${metric('Customers with balance','8')}${metric('Open balance orders','11')}</div>`+table(['Payment','Customer','Order','Amount'],[['PAY-0115','Maria Reyes','FO-0108','₱10,000'],['PAY-0114','Dream Home MNL','FO-0107','₱45,500'],['PAY-0113','Juan Dela Cruz','FO-0106','₱5,000']]),
+    () => head('Deliveries','Manage scheduled deliveries, statuses, and receipt readiness.')+filters('Search delivery, customer or order','All statuses')+table(['Delivery','Order','Scheduled','Status'],[['DLV-0204','FO-0108','Oct 21, 2026',badge('Scheduled','green')],['DLV-0203','FO-0107','Oct 18, 2026',badge('In transit')],['DLV-0202','FO-0105','Oct 14, 2026',badge('Delivered','green')]]),
+    () => head('Documents','Generated document registry and PDF downloads.')+filters('Search files and related records','All document types')+table(['Document','Type','Related to','Status'],[['QT-2026-0121.pdf','Quotation','QT-0121',badge('Generated','green')],['PAY-0115.pdf','Payment receipt','FO-0108',badge('Generated','green')],['DLV-0202.pdf','Delivery receipt','FO-0105',badge('Ready','green')]]),
+    () => head('Sales History','Review sales performance, balances, and operational reports.')+`<div class="fo-metrics">${metric('Total sales','₱264,800')}${metric('Total payments','₱201,050')}${metric('Pending balance','₱63,750')}</div><div class="fo-card"><div class="fo-card-head">Sales overview · Last 30 days</div>${chart}</div>`,
+    () => head('Users','Admin user and staff permission management.','+ Add user')+table(['Team member','Role','Status','Access'],[['Demo Admin','Admin',badge('Active','green'),'Full access'],['Sales Staff','Staff',badge('Active','green'),'Customers, Quotations'],['Delivery Staff','Staff',badge('Active','green'),'Orders, Deliveries']]),
+    () => head('Settings','Configure company profile, payments and operational documents.','Save settings')+`<div class="fo-mini-tabs"><span>Company</span><span>Payments</span><span>Documents</span></div><div class="fo-card"><div class="fo-card-head">Company profile</div><div class="fo-settings"><div><span>Company name</span><b>Furniture Odyssey</b></div><div><span>Currency</span><b>PHP</b></div><div><span>Support email</span><b>hello@example.com</b></div><div><span>Contact number</span><b>+63 900 000 0000</b></div></div></div>`
+  ];
+  function draw(index) {
+    selected = (index + names.length) % names.length;
+    main.innerHTML = views[selected]();
+    label.textContent = names[selected];
+    indexLabel();
+    allButtons.forEach((b,i) => {
+      const active = i === selected;
+      b.classList.toggle('active', active);
+      if (active) { b.setAttribute('aria-current', 'page'); nav.scrollTop = Math.max(0, b.offsetTop + b.offsetHeight - nav.clientHeight - nav.offsetTop); if (i < 4) nav.scrollTop = 0; }
+      else b.removeAttribute('aria-current');
+    });
+    updateShot();
+  }
+  function indexLabel() { index.textContent = String(selected+1).padStart(2,'0') + ' / ' + names.length; }
+  function updateShot() {
+    const route = routes[selected];
+    const slideId = selected;
+    if (pathExists[slideId] === false) { image.classList.remove('visible'); image.removeAttribute('src'); image.alt = ''; return; }
+    const url = screenshotDirectory + route + '.png';
+    image.onload = () => {pathExists[slideId] = true; if (selected === slideId) { image.classList.add('visible'); image.alt = names[selected] + ' screen in Furniture Odyssey'; }};
+    image.onerror = () => {pathExists[slideId] = false; if (selected === slideId) { image.classList.remove('visible'); image.removeAttribute('src'); image.alt=''; }};
+    image.classList.remove('visible');
+    image.src = url;
+  }
+  function stop() { clearTimeout(timer);timer=null; }
+  function schedule() {
+    stop();
+    if (!pausedByHover && isVisible && !document.hidden && !reduceMotion) {
+      timer = setTimeout(() => navigate(selected + 1, false), intervalMs);
+    }
+  }
+  function navigate(value, userInput) {
+    clearTimeout(transitionTimer);
+    if (reduceMotion) { draw(value); schedule(); return; }
+    stage.classList.add('transitioning');
+    transitionTimer = setTimeout(() => { draw(value); stage.classList.remove('transitioning'); }, speedMs / 2);
+    schedule();
+  }
+  // Pre-render navigation once, then keep all module labels in sync with the screenshot.
+  names.forEach((name,i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.innerHTML = `<span aria-hidden="true" style="width:12px;display:inline-block;text-align:center;flex:none;font-size:10px">${icons[i]}</span><span>${name}</span>`;
+    b.setAttribute('aria-label', 'Show ' + name);
+    b.addEventListener('click',()=>navigate(i,true));
+    nav.appendChild(b);
+    allButtons.push(b);
+  });
+  document.getElementById('fo-preview-prev').addEventListener('click',()=>navigate(selected-1,true));
+  document.getElementById('fo-preview-next').addEventListener('click',()=>navigate(selected+1,true));
+  stage.addEventListener('mouseenter',()=>{pausedByHover=true;stop();});
+  stage.addEventListener('mouseleave',()=>{pausedByHover=false;schedule();});
+  stage.addEventListener('keydown',event=>{
+    if(event.key==='ArrowRight'||event.key==='ArrowLeft') {
+      event.preventDefault();navigate(selected+(event.key==='ArrowRight'?1:-1),true);
+    }
+  });
+  document.addEventListener('visibilitychange',schedule);
+  if('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries=>{isVisible=entries.some(e=>e.isIntersecting);schedule();},{threshold:.2});
+    obs.observe(stage);
+  }
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  motion.addEventListener?.('change',e=>{reduceMotion=e.matches; schedule();});
+  draw(0);
+  schedule();
+})();
+</script>
+<script id="furniture-video-demo-controls">
+(() => {
+  const video = document.getElementById('furniture-demo-video');
+  const button = document.querySelector('.demo-video-play');
+  const frame = document.querySelector('.demo-video-frame');
+  if (!video || !button || !frame) return;
+  button.addEventListener('click', () => {
+    const playback = video.play();
+    if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+  });
+  video.addEventListener('play', () => frame.classList.add('is-playing'));
+  video.addEventListener('pause', () => frame.classList.remove('is-playing'));
+  video.addEventListener('ended', () => frame.classList.remove('is-playing'));
+})();
+</script>
+</body>
+</html>
