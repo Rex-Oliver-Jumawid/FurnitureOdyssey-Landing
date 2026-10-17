@@ -235,18 +235,6 @@ section[id],footer[id]{scroll-margin-top:110px;}
 .price-card ul{margin-top:18px;}
 .price-card .pricing-disclaimer {font-size:10px;margin:20px 0 0;line-height:1.65;color:#94877f;text-align:center;}
 /* Booking CTA preview popup: operational without pretending to reserve an appointment. */
-.meeting-dialog{border:1px solid #e4d5d0;border-radius:20px;max-width:min(560px,calc(100vw - 32px));width:100%;padding:0;color:#241f1d;box-shadow:0 25px 90px #24101a65;}
-.meeting-dialog::backdrop{background:rgba(30,19,19,.57);backdrop-filter:blur(4px);}
-.meeting-modal-content{padding:32px;display:flex;flex-direction:column;gap:12px;position:relative;}
-.meeting-modal-content h2{font:normal clamp(29px,3.2vw,42px)/1.06 Georgia,serif;letter-spacing:-.045em;margin:4px 0;}
-.meeting-modal-content p {color:#71675f;line-height:1.65;font-size:14px;margin:4px 0 10px;}
-.meeting-modal-content label {font:700 12px Arial,sans-serif;color:#3a302e;}
-.meeting-modal-content input {padding:13px 15px;border-radius:9px;border:1px solid #ded2cc;font:14px Arial,sans-serif;}
-.meeting-modal-content input:focus-visible {outline:2px solid #c33338;outline-offset:2px;}
-.meeting-modal-content .meeting-close {position:absolute;right:18px;top:16px;border:0;background:#f3ece8;border-radius:50%;font-size:24px;width:35px;height:35px;cursor:pointer;}
-.meeting-modal-content .meeting-copy{margin-top:10px;border:0;cursor:pointer;}
-.meeting-modal-content .meeting-status{margin:0;color:#356d51;font-weight:600;}
-.meeting-modal-content small{color:#9a8b83;line-height:1.5;font-size:11px;}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
  .nav.is-scrolled .nav-in {background:rgba(255,255,255,.95);}
 }
@@ -776,22 +764,12 @@ body > .prometheus-footer {
 <div class="footer-foreground">
 <div class="footer-top"><span class="brand-label">PROMETHEUS</span><a class="contact-label" href="#contact-actions">CONTACT US</a></div>
 <div class="footer-main"><div><h2 class="footer-heading">Let's build a system around how your business actually works.</h2><p class="footer-intro">Tell us where work becomes repetitive, fragmented, or difficult to keep track of. We'll start there.</p></div></div>
-<div class="footer-lower" id="contact-actions"><a aria-haspopup="dialog" class="footer-cta" href="#meeting-request">Book a 30-minute meeting with the team ↗</a><nav aria-label="Footer navigation" class="footer-links"><a href="#overview">Overview</a><a href="#features">Systems</a><a href="#workflow">Approach</a><a href="#pricing">Pricing</a><a href="#questions">FAQ</a><a href="#top">Back to top ↑</a></nav></div>
+<div class="footer-lower" id="contact-actions"><a class="footer-cta" href="https://cal.com/rex-oliver-jumawid-mmz8ct/furniture-odyssey-consultation" target="_blank" rel="noopener noreferrer" data-cal-link="rex-oliver-jumawid-mmz8ct/furniture-odyssey-consultation" data-cal-config='{"layout":"month_view"}' aria-haspopup="dialog">Book a 30-minute meeting with the team ↗</a><nav aria-label="Footer navigation" class="footer-links"><a href="#overview">Overview</a><a href="#features">Systems</a><a href="#workflow">Approach</a><a href="#pricing">Pricing</a><a href="#questions">FAQ</a><a href="#top">Back to top ↑</a></nav></div>
 </div>
 <div aria-hidden="true" class="footer-wordmark">PROMETHEUS</div>
 </div>
 </footer>
-<dialog aria-labelledby="meeting-title" class="meeting-dialog" id="meeting-request"><div class="meeting-modal-content">
-<button aria-label="Close meeting request" class="meeting-close" type="button">×</button>
-<span class="eyebrow">LET'S TALK</span>
-<h2 id="meeting-title">Book a 30-minute meeting.</h2>
-<p>Tell us what you would like to discuss with the Furniture Odyssey team. This preview does not yet connect to a live booking calendar.</p>
-<label for="meeting-name">Your name</label><input autocomplete="name" id="meeting-name" placeholder="Business owner or representative" type="text"/>
-<label for="meeting-business">Business name</label><input id="meeting-business" placeholder="Your furniture business" type="text"/>
-<button class="btn btn-primary meeting-copy" type="button">Copy meeting request</button>
-<p aria-live="polite" class="meeting-status" role="status"></p>
-<small>When your team has a calendar booking URL, replace this preview with the live booking flow.</small>
-</div></dialog><script>
+<script>
   (function () {
     const toggle = document.querySelector('.mobile-nav-toggle');
     const menu = document.getElementById('primary-navigation');
@@ -833,21 +811,6 @@ body > .prometheus-footer {
     function updateHeader() { header.classList.toggle('is-scrolled', window.scrollY > 40); }
     updateHeader();
     window.addEventListener('scroll', updateHeader, {passive:true});
-    const dialog = document.getElementById('meeting-request');
-    document.querySelectorAll('a[href="#meeting-request"]').forEach(a => a.addEventListener('click',e=>{
-      e.preventDefault();
-      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
-    }));
-    dialog.querySelector('.meeting-close').addEventListener('click',()=>dialog.close());
-    dialog.addEventListener('click',e => {if(e.target === dialog) dialog.close();});
-    dialog.querySelector('.meeting-copy').addEventListener('click',async()=>{
-      const name=dialog.querySelector('#meeting-name').value.trim();
-      const business=dialog.querySelector('#meeting-business').value.trim();
-      const body=`Hello Prometheus team, I would like to request a 30-minute meeting about Furniture Odyssey.\nName: ${name||'(Your name)'}\nBusiness: ${business||'(Business name)'}\nPlease let me know your available schedules.`;
-      const status=dialog.querySelector('.meeting-status');
-      try { await navigator.clipboard.writeText(body); status.textContent='Request copied. Send it to your Prometheus contact to arrange a schedule.'; }
-      catch (err) { status.textContent='Select and copy this request: '+body; }
-    });
   })();
 </script>
 <script id="footer-parallax">
@@ -1008,6 +971,41 @@ body > .prometheus-footer {
   video.addEventListener('pause', () => frame.classList.remove('is-playing'));
   video.addEventListener('ended', () => frame.classList.remove('is-playing'));
 })();
+</script>
+<script id="furniture-odyssey-cal-booking">
+/* Cal.com popup via element click, retaining the native booking link as a fallback. */
+(function (C, A, L) {
+  const p = function (a, ar) { a.q.push(ar); };
+  const d = C.document;
+  C.Cal = C.Cal || function () {
+    const cal = C.Cal;
+    const ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      d.head.appendChild(d.createElement('script')).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      const api = function () { p(api, arguments); };
+      const ns = ar[1];
+      api.q = api.q || [];
+      if (typeof ns === 'string') {
+        cal.ns[ns] = cal.ns[ns] || api;
+        p(cal.ns[ns], ar);
+        p(cal, ['initNamespace', ns]);
+      } else p(cal, ar);
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, 'https://app.cal.com/embed/embed.js', 'init');
+Cal('init', { origin: 'https://cal.com' });
+Cal('ui', {
+  styles: { branding: { brandColor: '#bd3434' } },
+  hideEventTypeDetails: false,
+  layout: 'month_view'
+});
 </script>
 </body>
 </html>
